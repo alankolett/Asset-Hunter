@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #00ff9d;
+  --color-brand-cyan: #00f0ff;
+  --color-brand-red: #ff003c;
+  --color-brand-yellow: #fcee0a;
+  --color-brand-dark: #050508;
+  --color-brand-card: #0a0a10;
+  --color-brand-border: #1a1a24;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: var(--color-brand-dark);
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 157, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 157, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+/* Scanlines overlay */
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+  z-index: 50;
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Custom scrollbar for cyberpunk theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-dark); 
+  border-left: 1px solid var(--color-brand-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-border); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green); 
+}
+
+.glitch-text {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 60, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 157, 0.75),
+    0.025em 0.05em 0 rgba(0, 240, 255, 0.75);
+}
+
+.cyber-border {
+  position: relative;
+}
+
+.cyber-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--color-brand-green);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+  pointer-events: none;
+}
+
+.cyber-button {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Asset-Hunter",
+  "description": "Digital Rights Threat Intelligence Engine for analyzing web-scraped media to detect unauthorized distribution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
